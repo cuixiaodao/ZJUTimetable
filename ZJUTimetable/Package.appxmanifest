@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="45681cuichaozju.GPA" Publisher="CN=B84EB1F8-F7FA-4165-8A6A-0714D9A5AC76" Version="1.1.0.14" />
+  <mp:PhoneIdentity PhoneProductId="dba5c3ff-dbb3-4571-8c59-a558b03b8d0c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>浙大GPA</DisplayName>
+    <PublisherDisplayName>崔超</PublisherDisplayName>
+    <Logo>Assets\Logo120.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ZJUTimetable.App">
+      <m3:VisualElements DisplayName="浙大课表" Square150x150Logo="Assets\Logo360.png" Square44x44Logo="Assets\Logo106.png" Description="ZJUTimetable" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Square71x71Logo="Assets\Logo170.png">
+        </m3:DefaultTile>
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="zju">
+            <SupportedFileTypes>
+              <FileType>.db</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <Capability Name="picturesLibrary" />
+  </Capabilities>
+</Package>

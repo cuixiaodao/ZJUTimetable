@@ -1,0 +1,164 @@
+﻿<Page
+    x:Class="ZJUTimetable.Account"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ZJUTimetable"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Light"
+    Background="{ThemeResource MyBackGround}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Pivot CommonNavigationTransitionInfo.IsStaggerElement="True">
+            <Pivot.Title>
+                <StackPanel Orientation="Horizontal">
+                    <Image VerticalAlignment="Top" Width="36" Source="Assets/Logo106.png" />
+                    <TextBlock VerticalAlignment="Top" Style="{ThemeResource TitleTextBlockStyle}">浙大课表</TextBlock>
+                </StackPanel>
+            </Pivot.Title>
+
+            <!--枢轴项一-->
+            <PivotItem
+                x:Uid="PivotItem1"
+                Margin="0,12,0,0"
+                Background="AliceBlue"         
+                CommonNavigationTransitionInfo.IsStaggerElement="True">
+                <PivotItem.Header>
+                    <TextBlock Margin="0,6,0,6" FontSize="30">账号</TextBlock>
+                </PivotItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
+                        <Image Margin="20,20,20,0" Width="160" Source="Assets/Logo360.png"/>
+                        <TextBlock TextAlignment="Center" FontSize="24" FontFamily="Georgia" FontWeight="Bold" >Time Is Treasure</TextBlock>
+
+                        <Grid Margin="0,10,10,16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="6*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="0,0,4,4" Source="Assets/UserName.png" />
+                            <TextBox x:Name="UserName" Grid.Column="1" BorderThickness="0" PlaceholderText="Student Number" InputScope="Number" GotFocus="UserName_GotFocus" TextChanged="Account_TextChanged"/>
+                        </Grid>
+                        <Grid Margin="0,10,10,16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="6*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="0,0,4,4" Source="Assets/Password.png" />
+                            <PasswordBox x:Name="MyPasswordBox" Grid.Column="1" BorderThickness="0" PlaceholderText="Password"  GotFocus="MyPasswordBox_GotFocus" PasswordChanged="Account_TextChanged"/>
+                        </Grid>
+
+                        <Button x:Name="SaveButton" Margin="0,10,10,16" BorderThickness="0" HorizontalAlignment="Stretch" Background="#FF889BAE" Click="SaveButton_Click">确认</Button>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <!--枢轴项二-->
+            <PivotItem
+                x:Uid="PivotItem2"
+                Margin="0,12,0,0"  
+                Background="AliceBlue">
+
+                <PivotItem.Header>
+                    <TextBlock Margin="0,6,0,6" FontSize="30">学期周数</TextBlock>
+                </PivotItem.Header>
+                <Grid Margin="18,24,0,0">
+                    <Grid.Resources>
+                        <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Margin" Value="0,0,0,20"/>
+                            <Setter Property="Width" Value="160"/>
+                            <Setter Property="Background" Value="LightGray"/>
+                        </Style>
+                        <Style x:Key="ComboBoxHeaderStyle" TargetType="TextBlock">
+                            <Setter Property="TextAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="24"/>
+                            <Setter Property="Margin" Value="20,0,0,20"/>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Style="{ThemeResource ComboBoxHeaderStyle}" >学期:</TextBlock>
+                    <ComboBox x:Name="Season" Grid.Column="1" Style="{ThemeResource ComboBoxStyle}" PlaceholderText="请选择当前学期">
+                        <ComboBoxItem x:Name="FirstTerm" IsSelected="True" >春</ComboBoxItem>
+                        <ComboBoxItem x:Name="SecondTerm">夏</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="1"  Style="{ThemeResource ComboBoxHeaderStyle}">当前周数:</TextBlock>
+                    <ComboBox x:Name="CurrentWeekNumber" Grid.Row="1" Grid.Column="1"  Style="{ThemeResource ComboBoxStyle}" 
+                              PlaceholderText="请选择当前周数">
+                        <ComboBoxItem IsSelected="True">第1周</ComboBoxItem>
+                        <ComboBoxItem>第2周</ComboBoxItem>
+                        <ComboBoxItem>第3周</ComboBoxItem>
+                        <ComboBoxItem>第4周</ComboBoxItem>
+                        <ComboBoxItem>第5周</ComboBoxItem>
+                        <ComboBoxItem>第6周</ComboBoxItem>
+                        <ComboBoxItem>第7周</ComboBoxItem>
+                        <ComboBoxItem>第8周</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+
+            </PivotItem>
+
+            <!--枢轴项三-->
+            <PivotItem
+                x:Uid="PivotItem3"
+                Margin="0,12,0,0"
+                Background="AliceBlue"         
+                CommonNavigationTransitionInfo.IsStaggerElement="True">
+                <PivotItem.Header>
+                    <TextBlock Margin="0,6,0,6" FontSize="30">关于</TextBlock>
+                </PivotItem.Header>
+                <!--   TextWrapping="Wrap"    <Setter Property="" Value=""/>-->
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" Margin="18,12,18,4">
+                        <StackPanel.Resources>
+                            <Style x:Key="InformationHeader" TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="30"/>
+                                <Setter Property="Foreground" Value="CadetBlue"/>                                
+                            </Style>
+
+                            <Style x:Key="InformationContent" TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="20"/>
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="Margin" Value="0,12,0,24"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Style="{ThemeResource InformationHeader}">应用介绍</TextBlock>
+                        <TextBlock Style="{ThemeResource InformationContent}">本应用面向浙江大学，可查看当前学期的课表，考试，学分、GPA统计信息、成绩。目前存在的bug为每次启动app只能同步一次，但一般也不需要反复同步。</TextBlock>
+                        
+                        <TextBlock Style="{ThemeResource InformationHeader}">学分计算方式</TextBlock>
+                        <TextBlock Style="{ThemeResource InformationContent}" Margin="0,12,0,0">各学期学分为所有及格(判断标准为绩点>1.5，或绩点为0，补考成绩为“补及格”)的课程学分之和。</TextBlock>
+                        <TextBlock Style="{ThemeResource InformationContent}" Margin="0,8,0,24">重修的课程，如及格，学分和绩点计入当前学期，第一次修读课程的学期学分、绩点不变（注意：与教务网有所不同，教务网是不计入当期学期，记在第一次修读学期）。如某课程多次修读，多次及格，则学分、绩点会被重复计算(注意：教务不重复计算)</TextBlock>
+                        
+                        <TextBlock Style="{ThemeResource InformationHeader}">均绩计算方式</TextBlock>
+                        <TextBlock Style="{ThemeResource InformationContent}">学期均绩为学期获得的所有绩点乘以相应课程学分求和，再除以按上述方式计算的学期总学分算得。总的平均绩点可以类推得到。</TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

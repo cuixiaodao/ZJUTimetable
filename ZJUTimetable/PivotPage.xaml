@@ -20,8 +20,6 @@
             </NavigationThemeTransition>
         </TransitionCollection>
     </Page.Transitions>
-
-
     
     <Grid>
         <Image Height="150" Width="150" Source="ms-appx:///Assets/Logo360.png" Opacity="0.3" />
@@ -228,7 +226,7 @@
                     <Grid.Resources>
                         <CollectionViewSource x:Name="TermGroupedGradess" Source="{Binding}" IsSourceGrouped="True" ItemsPath="Courses" />
                     </Grid.Resources>
-
+                    
                     <SemanticZoom HorizontalAlignment="Stretch"  VerticalAlignment="Top" Margin="4,0,4,0">
                         <SemanticZoom.ZoomedInView>
                             <ListView VerticalAlignment="Top" HorizontalAlignment="Stretch"

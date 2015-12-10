@@ -110,18 +110,18 @@ namespace ZJUTimetable
             this.navigationHelper.OnNavigatedTo(e);
 
             //change the seasonlabel
-            int month = System.DateTime.Now.Month;
+            //int month = System.DateTime.Now.Month;
 
-            if (month >= 2 && month <=8)
-            {
-                FirstTerm.Content = "春";
-                SecondTerm.Content = "夏";
-            }
-            else
-            {
-                FirstTerm.Content = "秋";
-                SecondTerm.Content = "冬";
-            }
+            //if (month >= 2 && month <=8)
+            //{
+            //    FirstTerm.Content = "春";
+            //    SecondTerm.Content = "夏";
+            //}
+            //else
+            //{
+            //    FirstTerm.Content = "秋";
+            //    SecondTerm.Content = "冬";
+            //}
 
             //load account info
             Windows.Storage.ApplicationDataContainer localsettings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -136,8 +136,9 @@ namespace ZJUTimetable
             if (localsettings.Values.ContainsKey("season"))
             {
                 string season = localsettings.Values["season"].ToString();
-                Season.SelectedIndex = season=="春"|| season=="秋"?0:1;
+                Season.SelectedIndex = (int)Enum.Parse(typeof(Season), season) ;
             }
+
             if (localsettings.Values.ContainsKey("weekNumber")&& localsettings.Values.ContainsKey("weekDate"))
             {
                 int weekDate = (int)localsettings.Values["weekDate"];            

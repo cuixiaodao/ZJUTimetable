@@ -25,7 +25,7 @@
                 </StackPanel>
             </Pivot.Title>
 
-            <!--枢轴项一-->
+            <!--枢轴项一 账号设置-->
             <PivotItem
                 x:Uid="PivotItem1"
                 Margin="0,12,0,0"
@@ -66,7 +66,7 @@
                     </StackPanel>
                 </Grid>
             </PivotItem>
-            <!--枢轴项二-->
+            <!--枢轴项二  学期周数设置-->
             <PivotItem
                 x:Uid="PivotItem2"
                 Margin="0,12,0,0"  
@@ -105,6 +105,8 @@
                     <ComboBox x:Name="Season" Grid.Column="1" Style="{ThemeResource ComboBoxStyle}" PlaceholderText="请选择当前学期">
                         <ComboBoxItem x:Name="FirstTerm" IsSelected="True" >春</ComboBoxItem>
                         <ComboBoxItem x:Name="SecondTerm">夏</ComboBoxItem>
+                        <ComboBoxItem x:Name="ThirdTerm" >秋</ComboBoxItem>
+                        <ComboBoxItem x:Name="ForthTerm" >冬</ComboBoxItem>
                     </ComboBox>
 
                     <TextBlock Grid.Row="1"  Style="{ThemeResource ComboBoxHeaderStyle}">当前周数:</TextBlock>
@@ -123,7 +125,7 @@
 
             </PivotItem>
 
-            <!--枢轴项三-->
+            <!--枢轴项三 关于-->
             <PivotItem
                 x:Uid="PivotItem3"
                 Margin="0,12,0,0"
@@ -148,12 +150,13 @@
                             </Style>
                         </StackPanel.Resources>
                         <TextBlock Style="{ThemeResource InformationHeader}">应用介绍</TextBlock>
-                        <TextBlock Style="{ThemeResource InformationContent}">本应用面向浙江大学，可查看当前学期的课表，考试，学分、GPA统计信息、成绩。目前存在的bug为每次启动app只能同步一次，但一般也不需要反复同步。</TextBlock>
-                        
+                        <TextBlock Style="{ThemeResource InformationContent}">本应用面向浙江大学，可查看当前学期的课表，考试，学分、GPA信息。目前存在的bug为每次启动app只能从教务网下载数据一次，但也只有第一次使用时需下载数据。
+                            学号和密码信息均保存在用户手机本地,所有数据传输/通信均只发生在用户手机和教务网之间,app开发者接触不到。所有数据仅供参考(尤其对于有重修、挂科、补考等情况的同学，
+                            因为以下数据的计算方式与教务系统有出入，见谅 :)。</TextBlock>
                         <TextBlock Style="{ThemeResource InformationHeader}">学分计算方式</TextBlock>
                         <TextBlock Style="{ThemeResource InformationContent}" Margin="0,12,0,0">各学期学分为所有及格(判断标准为绩点>1.5，或绩点为0，补考成绩为“补及格”)的课程学分之和。</TextBlock>
-                        <TextBlock Style="{ThemeResource InformationContent}" Margin="0,8,0,24">重修的课程，如及格，学分和绩点计入当前学期，第一次修读课程的学期学分、绩点不变（注意：与教务网有所不同，教务网是不计入当期学期，记在第一次修读学期）。如某课程多次修读，多次及格，则学分、绩点会被重复计算(注意：教务不重复计算)</TextBlock>
-                        
+                        <TextBlock Style="{ThemeResource InformationContent}" Margin="0,8,0,24">重修的课程，如及格，学分和绩点计入当前学期，第一次修读课程的学期学分、绩点不变。如某课程多次修读，多次及格，则学分、绩点会被重复计算。</TextBlock>
+                        <!--重修的课程，如及格，学分和绩点计入当前学期，第一次修读课程的学期学分、绩点不变（注意：与教务网有所不同，教务网是不计入当期学期，记在第一次修读学期）。如某课程多次修读，多次及格，则学分、绩点会被重复计算(注意：教务不重复计算)-->
                         <TextBlock Style="{ThemeResource InformationHeader}">均绩计算方式</TextBlock>
                         <TextBlock Style="{ThemeResource InformationContent}">学期均绩为学期获得的所有绩点乘以相应课程学分求和，再除以按上述方式计算的学期总学分算得。总的平均绩点可以类推得到。</TextBlock>
                     </StackPanel>

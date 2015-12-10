@@ -167,51 +167,23 @@ namespace ZJUTimetable
             Windows.Storage.ApplicationDataContainer localsettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             StringBuilder currentTermAndWeek = new StringBuilder();
 
-            currentTermAndWeek.Append( "你好 ^.^，今天是" + getDayOfWeek()+",");
+            currentTermAndWeek.Append( "你好 :)，今天是" + getDayOfWeek());
             if (localsettings.Values.ContainsKey("season"))
             {
-                currentTermAndWeek.Append(localsettings.Values["season"].ToString() + "学期");
+                currentTermAndWeek.Append("," + localsettings.Values["season"].ToString() + "学期");
             }
             if (localsettings.Values.ContainsKey("weekNumber") && localsettings.Values.ContainsKey("weekDate"))
             {
                 int weekNumber = Math.Abs((int)localsettings.Values["weekNumber"] + (System.DateTime.Today.DayOfYear - (int)localsettings.Values["weekDate"]) / 7) % 8 + 1;
-                currentTermAndWeek.Append("第" + weekNumber.ToString() + "周");
+                currentTermAndWeek.Append("第" + weekNumber.ToString() + "周了");
             }
             TermAndWeekInfomation.Text = currentTermAndWeek.ToString();
 
         }
         private string getDayOfWeek()
         {
-           string dayOfWeek;
-            switch ((int)System.DateTime.Today.DayOfWeek)
-            {
-                case 0:
-                    dayOfWeek = "周日";
-                    break;
-                case 1:
-                    dayOfWeek = "周一";
-                    break;
-                case 2:
-                    dayOfWeek = "周二";
-                    break;
-                case 3:
-                    dayOfWeek = "周三";
-                    break;
-                case 4:
-                    dayOfWeek = "周四";
-                    break;
-                case 5:
-                    dayOfWeek = "周五";
-                    break;
-                case 6:
-                    dayOfWeek = "周六";
-                    break;
-                default:
-                    dayOfWeek = "神奇的一天";
-                    break;
-            }
-
-            return dayOfWeek;
+           string[] daysOfWeek=new string[7] { "周日", "周一", "周二", "周三", "周四", "周五", "周六" };
+           return daysOfWeek[(int)System.DateTime.Today.DayOfWeek];
         }
         #endregion
 

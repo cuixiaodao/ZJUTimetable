@@ -77,11 +77,11 @@
                                     </Grid.ColumnDefinitions>
 
                                     <TextBlock Style="{ThemeResource ItemAbstractStyle}" Text="{Binding LessonName}" />
-                                    <TextBlock Grid.Column="1" Style="{ThemeResource ItemAbstractStyle}" Text="{Binding Time1}"/>
+                                    <TextBlock Grid.Column="1" Style="{ThemeResource ItemAbstractStyle}" Text="{Binding Time}"/>
                                     <TextBlock Grid.Row="1" Style="{ThemeResource ItemDetailStyle}" Text="{Binding Teacher}" />
-                                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{ThemeResource ItemDetailStyle}" Text="{Binding Class1}"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{ThemeResource ItemDetailStyle}" Text="{Binding Class}"/>
                                 </Grid>
-                                <TextBlock Grid.Row="1" Style="{ThemeResource ItemDetailStyle}" Text="{Binding LessonPlace1}"/>
+                                <TextBlock Grid.Row="1" Style="{ThemeResource ItemDetailStyle}" Text="{Binding LessonPlace}"/>
                             </Grid>
                         </DataTemplate>
                     </Grid.Resources>

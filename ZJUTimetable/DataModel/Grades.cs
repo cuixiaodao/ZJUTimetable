@@ -515,7 +515,7 @@ namespace ZJUTimetable.DataModel
                 foreach (var lessonHtml in lessons)
                 {
                     var lessonDatas = lessonHtml.QuerySelectorAll("td");
-                    if (lessonDatas[3].TextContent== "短" || lessonDatas[4].TextContent=="")
+                    if (lessonDatas[3].TextContent== "短" || lessonDatas[4].TextContent.Trim()=="")
                     {
                         continue;
                     }

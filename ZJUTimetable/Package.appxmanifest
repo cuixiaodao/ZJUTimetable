@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="45681cuichaozju.GPA" Publisher="CN=B84EB1F8-F7FA-4165-8A6A-0714D9A5AC76" Version="1.1.0.17" />
+  <Identity Name="45681cuichaozju.GPA" Publisher="CN=B84EB1F8-F7FA-4165-8A6A-0714D9A5AC76" Version="1.2.0.21" />
   <mp:PhoneIdentity PhoneProductId="dba5c3ff-dbb3-4571-8c59-a558b03b8d0c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>浙大GPA</DisplayName>

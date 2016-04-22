@@ -152,11 +152,15 @@
     <SDKReference Include="Microsoft.VCLibs, Version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WP81, Version=3.9.2">
+    <SDKReference Include="SQLite.WP81, Version=3.12.2">
       <Name>SQLite for Windows Phone 8.1</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.5.41771, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.5\lib\dotnet\AngleSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Syncfusion.SfBusyIndicator.WP">
       <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\13.1.0.21\Assemblies for Windows Phone\8.1\Syncfusion.SfBusyIndicator.WP.dll</HintPath>
     </Reference>

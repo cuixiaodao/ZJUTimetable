@@ -502,7 +502,7 @@ namespace ZJUTimetable.DataModel
             }
             else
             {                
-                term = "&xnd=" + (now.Year - 2) + "-" + (now.Year-1) + "&xqd=2%7C%B4%BA%A1%A2%CF%C4"; // for test
+                term = "&xnd=" + (now.Year - 1) + "-" + now.Year + "&xqd=2%7C%B4%BA%A1%A2%CF%C4";
             }
 
             string websiteLessons = "http://jwbinfosys.zju.edu.cn/xskbcx.aspx?xh=" + userName;
